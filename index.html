@@ -60,8 +60,9 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
             color: var(--text-color);
             line-height: 1.6;
-            padding: 20px;
+            padding: 15px;
             min-height: 100vh;
+            font-size: 16px; /* 默认字体大小 */
         }
         
         .container {
@@ -72,30 +73,30 @@
         
         header {
             text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
+            margin-bottom: 25px;
+            padding: 15px;
             position: relative;
         }
         
         h1 {
             color: var(--primary-color);
             margin-bottom: 10px;
-            font-size: 2.5rem;
+            font-size: 2rem; /* 移动端标题字体缩小 */
+            margin-top: 20px;
         }
         
         .subtitle {
             color: var(--secondary-color);
-            font-size: 1.2rem;
+            font-size: 1rem; /* 移动端副标题字体缩小 */
             max-width: 600px;
             margin: 0 auto;
         }
         
         .language-switch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
             display: flex;
+            justify-content: center;
             gap: 10px;
+            margin-bottom: 15px;
         }
         
         .lang-btn {
@@ -106,6 +107,7 @@
             cursor: pointer;
             transition: var(--transition);
             font-weight: 600;
+            font-size: 0.9rem; /* 移动端语言按钮字体缩小 */
         }
         
         .lang-btn.active {
@@ -117,20 +119,47 @@
         .calculator-wrapper {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
+            gap: 20px;
+            margin-bottom: 30px;
         }
         
         @media (min-width: 992px) {
             .calculator-wrapper {
                 grid-template-columns: 1fr 1fr;
             }
+            
+            /* 桌面端恢复原有字体大小 */
+            body {
+                font-size: 16px;
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+                margin-top: 0;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .language-switch {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                justify-content: flex-end;
+                margin-bottom: 0;
+            }
+            
+            .lang-btn {
+                font-size: 1rem;
+            }
         }
         
         .input-section, .results-section {
             background: white;
             border-radius: var(--border-radius);
-            padding: 25px;
+            padding: 20px;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
         }
@@ -146,15 +175,16 @@
             border-bottom: 2px solid var(--light-color);
             display: flex;
             align-items: center;
+            font-size: 1.3rem; /* 移动端章节标题字体缩小 */
         }
         
         .section-title i {
             margin-right: 10px;
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* 移动端图标大小调整 */
         }
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
         
         label {
@@ -162,6 +192,7 @@
             margin-bottom: 8px;
             font-weight: 600;
             color: var(--dark-color);
+            font-size: 0.95rem; /* 移动端标签字体缩小 */
         }
         
         input, select {
@@ -169,7 +200,7 @@
             padding: 12px 15px;
             border: 1px solid #ddd;
             border-radius: var(--border-radius);
-            font-size: 16px;
+            font-size: 16px; /* 保持输入框字体大小不变，便于输入 */
             transition: var(--transition);
         }
         
@@ -194,12 +225,13 @@
             text-align: center;
             font-weight: 600;
             color: var(--primary-color);
+            font-size: 0.9rem; /* 移动端范围值字体缩小 */
         }
         
         .button-group {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 12px;
             margin-top: 10px;
         }
         
@@ -236,20 +268,20 @@
         .result-card {
             background: linear-gradient(135deg, var(--light-color) 0%, #e8f0f7 100%);
             border-radius: var(--border-radius);
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 18px;
+            margin-bottom: 18px;
             text-align: center;
             border-left: 4px solid var(--primary-color);
         }
         
         .result-title {
-            font-size: 14px;
+            font-size: 0.9rem; /* 移动端结果标题字体缩小 */
             color: var(--secondary-color);
             margin-bottom: 5px;
         }
         
         .result-value {
-            font-size: 24px;
+            font-size: 1.5rem; /* 移动端结果值字体缩小 */
             font-weight: 700;
             color: var(--primary-color);
         }
@@ -263,7 +295,7 @@
         }
         
         .details {
-            margin-top: 20px;
+            margin-top: 18px;
         }
         
         .detail-row {
@@ -271,6 +303,7 @@
             justify-content: space-between;
             padding: 10px 0;
             border-bottom: 1px solid #eee;
+            font-size: 0.9rem; /* 移动端详情行字体缩小 */
         }
         
         .detail-label {
@@ -282,23 +315,29 @@
         }
         
         .chart-container {
-            margin-top: 30px;
-            height: 250px;
+            margin-top: 25px;
+            height: 220px; /* 移动端图表高度调整 */
+        }
+        
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 250px; /* 平板和桌面端图表高度恢复 */
+            }
         }
         
         .knowledge-section {
             background: white;
             border-radius: var(--border-radius);
-            padding: 25px;
+            padding: 20px;
             box-shadow: var(--box-shadow);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         
         .knowledge-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
-            margin-top: 20px;
+            gap: 18px;
+            margin-top: 18px;
         }
         
         @media (min-width: 768px) {
@@ -310,7 +349,7 @@
         .knowledge-card {
             background: var(--light-color);
             border-radius: var(--border-radius);
-            padding: 20px;
+            padding: 18px;
             border-left: 4px solid var(--accent-color);
         }
         
@@ -319,11 +358,17 @@
             margin-bottom: 10px;
             display: flex;
             align-items: center;
+            font-size: 1.1rem; /* 移动端知识卡片标题字体缩小 */
         }
         
         .knowledge-card h3 i {
             margin-right: 10px;
             color: var(--accent-color);
+            font-size: 1rem; /* 移动端知识卡片图标大小调整 */
+        }
+        
+        .knowledge-card p, .knowledge-card li {
+            font-size: 0.9rem; /* 移动端知识卡片内容字体缩小 */
         }
         
         .quote {
@@ -331,8 +376,9 @@
             padding: 15px;
             background: #f0f7ff;
             border-radius: var(--border-radius);
-            margin: 20px 0;
+            margin: 18px 0;
             border-left: 4px solid var(--primary-color);
+            font-size: 0.9rem; /* 移动端引用字体缩小 */
         }
         
         .quote-author {
@@ -340,24 +386,26 @@
             margin-top: 10px;
             font-weight: 600;
             color: var(--secondary-color);
+            font-size: 0.85rem; /* 移动端引用作者字体缩小 */
         }
         
         footer {
             text-align: center;
             color: var(--secondary-color);
-            font-size: 14px;
-            padding: 20px;
+            font-size: 0.85rem; /* 移动端页脚字体缩小 */
+            padding: 18px;
             border-top: 1px solid #eee;
         }
         
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin: 18px 0;
+            font-size: 0.85rem; /* 移动端表格字体缩小 */
         }
         
         .comparison-table th, .comparison-table td {
-            padding: 12px 15px;
+            padding: 10px 12px;
             text-align: left;
             border-bottom: 1px solid #eee;
         }
@@ -376,23 +424,25 @@
             padding: 3px 6px;
             border-radius: 4px;
             font-weight: 600;
+            font-size: 0.9rem; /* 移动端高亮文本字体缩小 */
         }
         
         .example-box {
             background: #f0f7ff;
             border-radius: var(--border-radius);
-            padding: 15px;
-            margin: 15px 0;
+            padding: 12px;
+            margin: 12px 0;
+            font-size: 0.9rem; /* 移动端示例框字体缩小 */
         }
         
         .hidden {
             display: none;
         }
         
-        /* 新增：面包屑导航 */
+        /* 面包屑导航 */
         .breadcrumb {
-            margin-bottom: 20px;
-            font-size: 14px;
+            margin-bottom: 18px;
+            font-size: 0.85rem; /* 移动端面包屑字体缩小 */
         }
         
         .breadcrumb a {
@@ -404,17 +454,19 @@
             text-decoration: underline;
         }
         
-        /* 新增：页脚链接 */
+        /* 页脚链接 */
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             margin-top: 10px;
+            flex-wrap: wrap;
         }
         
         .footer-links a {
             color: var(--secondary-color);
             text-decoration: none;
+            font-size: 0.85rem; /* 移动端页脚链接字体缩小 */
         }
         
         .footer-links a:hover {
@@ -425,7 +477,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- 新增：面包屑导航 -->
+        <!-- 面包屑导航 -->
         <nav class="breadcrumb" aria-label="面包屑导航">
             <a href="#" data-zh="首页" data-en="Home"></a> &gt; 
             <a href="#" data-zh="金融工具" data-en="Financial Tools"></a> &gt; 
